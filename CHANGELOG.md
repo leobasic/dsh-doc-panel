@@ -4,6 +4,15 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-11-09
+
+### Fixed
+
+- Relative document references (`write`/`edit` file paths and paths mentioned by
+  write-capable tools) now resolve against a POSIX working directory as well as a
+  Windows one, so Linux and macOS workspaces attribute documents correctly. Added a
+  cross-platform regression test; the CI matrix (Node 22 and 24) is green.
+
 ## [0.1.0] - 2026-11-09
 
 First public release.

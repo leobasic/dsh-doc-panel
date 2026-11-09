@@ -1,6 +1,6 @@
 {
   "name": "dsh-doc-panel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Conversation-scoped document browser for DeepSeek Harness: every document your conversations produce, grouped by conversation, searchable and previewable.",
   "license": "MIT",
   "author": {

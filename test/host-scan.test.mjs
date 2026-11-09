@@ -186,6 +186,20 @@ try {
     const relRef = get(path.join(cwd, 'sub', 'rel.txt')); assert(relRef, 'relative edit ref missing'); eq(relRef.strong, true, 'edit.strong'); eq(relRef.authored, true, 'edit.authored')
     const presentRef = get(path.join(cwd, 'out.pdf')); assert(presentRef, 'present ref missing'); eq(presentRef.strong, true, 'present.strong'); eq(presentRef.delivered, true, 'present.delivered'); eq(presentRef.authored, false, 'present.authored')
   })
+  check('relative refs resolve against a POSIX-style cwd on every platform', () => {
+    const posixCwd = '/srv/workspace'
+    const sig = host.extractSessionSignals([
+      { type: 'session', id: 's', cwd: posixCwd, createdAt: T0 },
+      toolCall(T0 + 1, 'write', { file_path: 'docs/posix.md' }),
+      toolCall(T0 + 2, 'edit', { file_path: '/srv/workspace/abs-posix.md' }),
+    ], { cwd: posixCwd })
+    const expectedRelative = path.resolve(posixCwd, 'docs/posix.md')
+    const expectedAbsolute = path.resolve('/srv/workspace/abs-posix.md')
+    const relRef = sig.refs.find((r) => norm(r.path) === norm(expectedRelative))
+    const absRef = sig.refs.find((r) => norm(r.path) === norm(expectedAbsolute))
+    assert(relRef, 'POSIX relative ref missing'); eq(relRef.strong, true, 'posix.relative.strong')
+    assert(absRef, 'POSIX absolute ref missing'); eq(absRef.strong, true, 'posix.absolute.strong')
+  })
   check('write-capable medium refs vs read-only tools and ignored paths', () => {
     const sharedSig = host.extractSessionSignals([
       { type: 'session', id: 's', cwd: WS, createdAt: T0 },

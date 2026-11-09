@@ -311,8 +311,9 @@ function extensionOf(value) {
 
 /**
  * Resolve a path reference found in a tool call.
- * - absolute Windows path -> normalised absolute path
- * - relative path + session cwd -> resolved against that cwd
+ * - absolute Windows path -> normalised with win32 rules
+ * - absolute POSIX path -> resolved with the host resolver
+ * - relative path + session cwd (Windows or POSIX) -> resolved against that cwd
  * - anything else stays as-is (and will simply fail to match an indexed file)
  */
 function resolveRefPath(value, cwd) {
@@ -326,9 +327,20 @@ function resolveRefPath(value, cwd) {
       return null
     }
   }
-  if (typeof cwd === 'string' && isWindowsAbsolute(cwd)) {
+  if (trimmed.startsWith('/') || trimmed.startsWith('\\')) {
     try {
-      return win32.resolve(cwd, trimmed)
+      return resolve(trimmed)
+    } catch {
+      return null
+    }
+  }
+  if (typeof cwd === 'string' && cwd.trim() !== '') {
+    const base = cwd.trim()
+    try {
+      // A relative reference means "relative to the conversation's working directory";
+      // keep Windows and POSIX bases on their own separator conventions.
+      if (isWindowsAbsolute(base)) return win32.resolve(base, trimmed)
+      if (base.startsWith('/') || base.startsWith('\\')) return resolve(base, trimmed)
     } catch {
       return null
     }
