@@ -1,0 +1,70 @@
+{
+  "name": "dsh-doc-panel",
+  "version": "0.1.0",
+  "description": "Conversation-scoped document browser for DeepSeek Harness: every document your conversations produce, grouped by conversation, searchable and previewable.",
+  "license": "MIT",
+  "author": {
+    "name": "leobasic",
+    "url": "https://github.com/leobasic"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leobasic/dsh-doc-panel.git"
+  },
+  "homepage": "https://github.com/leobasic/dsh-doc-panel#readme",
+  "bugs": {
+    "url": "https://github.com/leobasic/dsh-doc-panel/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+  },
+  "scripts": {
+    "check": "node --check index.js && node --check client.js",
+    "test": "node scripts/test-all.mjs",
+    "pack:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "cordis-plugin",
+    "dsh-plugin",
+    "document-management",
+    "markdown",
+    "pdf",
+    "docx",
+    "dashboard"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

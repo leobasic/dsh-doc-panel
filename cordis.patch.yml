@@ -1,0 +1,5 @@
+# Bundle patch: the row loads index.js as the Host half; `dsh.client` in
+# package.json makes the Web app load ./client.js as the browser half.
+- insert:
+    - id: dsh-doc-panel
+      name: dsh-doc-panel

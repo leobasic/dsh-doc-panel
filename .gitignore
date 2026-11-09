@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Local, machine-specific data — never commit
+test/fixture.json
+test/.local/
+.dsh-doc-panel/
+*.log
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local verification output
+coverage/
+*.tgz
