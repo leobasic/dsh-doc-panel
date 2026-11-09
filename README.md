@@ -10,7 +10,7 @@ previewable, without leaving the app.
 
 **English** · [简体中文](README.zh.md)
 
-![dsh-doc-panel dashboard: document title, search field, 全部/收藏 switch and four KPI tiles]([https://github.com/leobasic/dsh-doc-panel/blob/main/doc_plugin_pic.png](https://github.com/leobasic/dsh-doc-panel/blob/main/doc_plugin_pic.png))
+![dsh-doc-panel dashboard: KPI tiles, favorites, document types and conversation folders](https://raw.githubusercontent.com/leobasic/dsh-doc-panel/main/assets/screenshot-dashboard.png)
 
 ## Why
 
@@ -184,7 +184,8 @@ Full threat model and the exact read/write surfaces: [docs/privacy.md](docs/priv
 
 ## Screenshots
 
-The hero above shows the top bar and KPI row. Below: the conversation card grid and the
+The hero above is the full dashboard: KPI tiles, the favorites card, the document-type
+donut and the conversation folders. Below: the conversation card grid and the
 document-type breakdown. Conversation titles, workspace names and file names in the card
 grid are intentionally blurred — the screenshots come from a real library and are
 redacted before publication.

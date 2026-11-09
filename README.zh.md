@@ -9,7 +9,7 @@
 
 [English](README.md) · **简体中文**
 
-![dsh-doc-panel 面板：文档标题、搜索框、全部/收藏切换与四个指标卡片](https://raw.githubusercontent.com/leobasic/dsh-doc-panel/main/assets/screenshot-dashboard.png)
+![dsh-doc-panel 面板总览：指标卡片、收藏夹、文档类型环图与对话文件夹](https://raw.githubusercontent.com/leobasic/dsh-doc-panel/main/assets/screenshot-dashboard.png)
 
 ## 为什么需要它
 
@@ -161,8 +161,9 @@ React）组成，由 `cordis.patch.yml` 装配 —— 无构建、无打包。
 
 ## 截图
 
-上方主图展示顶栏与指标卡片。下面依次是对话卡片网格与文档类型分布。卡片网格中的
-对话标题、工作区名与文件名已刻意模糊处理 —— 截图来自真实文档库，发布前做了脱敏。
+上方主图是完整的仪表盘界面：指标卡片、收藏夹、文档类型环图与对话文件夹。下面依次是
+对话卡片网格与文档类型分布。卡片网格中的对话标题、工作区名与文件名已刻意模糊处理 ——
+截图来自真实文档库，发布前做了脱敏。
 
 | 对话卡片网格 | 文档类型 |
 |---|---|
