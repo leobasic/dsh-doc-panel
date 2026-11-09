@@ -10,7 +10,7 @@ previewable, without leaving the app.
 
 **English** · [简体中文](README.zh.md)
 
-![dsh-doc-panel dashboard: document title, search field, 全部/收藏 switch and four KPI tiles]([/leobasic/dsh-doc-panel/blob/main/doc_plugin_pic.png](/leobasic/dsh-doc-panel/blob/main/doc_plugin_pic.png))
+![dsh-doc-panel dashboard: document title, search field, 全部/收藏 switch and four KPI tiles]([https://github.com/leobasic/dsh-doc-panel/blob/main/doc_plugin_pic.png](https://github.com/leobasic/dsh-doc-panel/blob/main/doc_plugin_pic.png))
 
 ## Why
 
